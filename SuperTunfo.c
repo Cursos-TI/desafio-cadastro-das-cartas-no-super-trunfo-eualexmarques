@@ -10,6 +10,10 @@ int main(){
     float area02;
     float PIB;
     float PIB02;
+    float quociente;
+    float Quociente;
+    float quociente2;
+    float Quociente2;
     char estado [8] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
     char Estado [8] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
     char nome_cidade [20];
@@ -60,6 +64,10 @@ int main(){
     printf ("Área: %.2f\n", area);
     printf ("PIB: %.2f\n", PIB);
     printf ("Pontos turisticos: %d\n", pontos_turisticos);
+    quociente = (float) habitantes / area;
+    printf("Densidade populacional: %.2f\n", quociente);
+    Quociente = (float) PIB / habitantes;
+    printf("PIB per capita: %.2f\n", Quociente);
 
     printf ("Carta 02\n");
     printf ("Cidade: %s\n", Nome_cidade);
@@ -69,6 +77,10 @@ int main(){
     printf ("Pontos turisticos: %d\n", Pontos_turisticos);
     printf ("Area: %.2f\n", area02);
     printf ("PIB: %.2f\n", PIB02);
+    quociente2 = (float) Habitantes / area02;
+    printf("Densidade populacional: %.2f\n", quociente2);
+    Quociente2 = (float) PIB02 / Habitantes;
+    printf("PIB per capita: %.2f\n", Quociente2);
 
 
     return 0;
