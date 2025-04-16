@@ -115,7 +115,7 @@ int main(){
     printf("O Superpoder que é a soma de todas as estatisticas da carta pertence a carta: %d\n", resultadosuperpoder);
     //Vamos fazer a comparação de cartas
     printf("\nCarta01 %s:%d\n", nome_cidade, habitantes);
-   printf("Carta02 %s:%d\n", Nome_cidade, Habitantes);
+    printf("Carta02 %s:%d\n", Nome_cidade, Habitantes);
    
     if (habitantes > Habitantes){
         printf("\nCarta01 venceu\n");
