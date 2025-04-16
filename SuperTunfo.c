@@ -29,7 +29,9 @@ int main(){
     char codigo [4];
     char Codigo [4];
 
-    printf ("carta 01\n");
+    printf("\n****Vamos começar o jogo Super Trufo****\n");
+    //Coletamos os dados das cartas 01 e 02
+    printf ("\ncarta 01\n");
     printf ("Digite o nome da cidade:\n");
     scanf ("%s", nome_cidade);
     printf ("Digite o codigo:\n");
@@ -45,10 +47,10 @@ int main(){
     printf ("Digite qual o PIB:\n");
     scanf ("%f", &PIB);
     quociente = (float) habitantes / area;
-    Quociente = (float) PIB / habitantes;
+    Quociente = (float) PIB * 1000000000 / habitantes;
     SuperPoder1 = habitantes + area + PIB + pontos_turisticos + Quociente + (1 / quociente);
 
-    printf ("Carta 02\n");
+    printf ("\nCarta 02\n");
     printf ("Digite o nome da cidade:\n");
     scanf ("%s", Nome_cidade);
     printf ("Digite o codigo:\n");
@@ -64,12 +66,12 @@ int main(){
     printf ("Digite qual o PIB:\n");
     scanf ("%f", &PIB02);
     quociente2 = (float) Habitantes / area02;
-    Quociente2 = (float) PIB02 / Habitantes;
+    Quociente2 = (float) PIB02 * 1000000000 / Habitantes;
     SuperPoder2 = Habitantes + area02 + PIB02 + Pontos_turisticos + Quociente2 + (1 / quociente2);
     
     //Agora pegamos os dados anotados e montamos as cartas
 
-    ;printf ("Carta 01\n");
+    ;printf ("\nCarta 01\n");
     
     printf ("Estado: %s\n", estado);
     printf ("Codigo: %s\n", codigo);
@@ -82,7 +84,7 @@ int main(){
     printf("PIB per capita: %.2f\n", Quociente);
     printf("Superpoder: %.2f\n", SuperPoder1);
 
-    printf ("Carta 02\n");
+    printf ("\nCarta 02\n");
     printf ("Cidade: %s\n", Nome_cidade);
     printf ("Codigo: %s\n", Codigo);
     printf ("Estado: %s\n", Estado);
@@ -101,7 +103,7 @@ int main(){
     resultadodensidadepopulacional = quociente < quociente2;
     resultadopibpercapita = Quociente > Quociente2;
     resultadosuperpoder = SuperPoder1 > SuperPoder2;
-
+    //Pegamos as informação coletados e fazemos um duelo 
     printf("\n Duelo de cartas\n");
     printf("\nO numero 1 representa a carta01, o numero 0 representa a carta02\n");
     printf("A maior população é da carta: %d\n", resultadopopulacao);
@@ -111,8 +113,18 @@ int main(){
     printf("A menor densidade populacional pertence a carta: %d\n", resultadodensidadepopulacional);
     printf("O maior PIB per capita pertence a carta: %d\n", resultadopibpercapita);
     printf("O Superpoder que é a soma de todas as estatisticas da carta pertence a carta: %d\n", resultadosuperpoder);
+    //Vamos fazer a comparação de cartas
+    printf("\nCarta01 %s:%d\n", nome_cidade, habitantes);
+   printf("Carta02 %s:%d\n", Nome_cidade, Habitantes);
+   
+    if (habitantes > Habitantes){
+        printf("\nCarta01 venceu\n");
 
-
+    }
+    else{
+        printf("\nCarta02 venceu\n");
+        
+    }
 
     return 0;
 
