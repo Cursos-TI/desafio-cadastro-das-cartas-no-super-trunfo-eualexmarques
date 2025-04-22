@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 int main(){
-
+    
+    int opcao1, opcao2;
+    int resultado1, resultado2;
     int pontos_turisticos;
     int Pontos_turisticos;
     int habitantes;
     int Habitantes;
-    int resultadopopulacao, resultadoarea, resultadopib, resultadopontosturisticos, 
-    resultadodensidadepopulacional, resultadopibpercapita, resultadosuperpoder;
     float area;
-    float area02;
+    float area2;
     float PIB;
     float PIB02;
     float densidade_populacional1;
@@ -62,12 +62,12 @@ int main(){
     printf ("Digite quantos pontos turisticos:\n");
     scanf ("%d", &Pontos_turisticos);
     printf ("Digite qual a áre:\n");
-    scanf ("%f", &area02);
+    scanf ("%f", &area2);
     printf ("Digite qual o PIB:\n");
     scanf ("%f", &PIB02);
-    quociente2 = (float) Habitantes / area02;
+    quociente2 = (float) Habitantes / area2;
     Quociente2 = (float) PIB02 * 1000000000 / Habitantes;
-    SuperPoder2 = Habitantes + area02 + PIB02 + Pontos_turisticos + Quociente2 + (1 / quociente2);
+    SuperPoder2 = Habitantes + area2 + PIB02 + Pontos_turisticos + Quociente2 + (1 / quociente2);
     
     //Agora pegamos os dados anotados e montamos as cartas
 
@@ -90,41 +90,72 @@ int main(){
     printf ("Estado: %s\n", Estado);
     printf ("População: %d\n", Habitantes);
     printf ("Pontos turisticos: %d\n", Pontos_turisticos);
-    printf ("Area: %.2f\n", area02);
+    printf ("Area: %.2f\n", area2);
     printf ("PIB: %.2f\n", PIB02);
     printf("Densidade populacional: %.2f\n", quociente2);
     printf("PIB per capita: %.2f\n", Quociente2);
     printf("Superpoder: %.2f\n", SuperPoder2);
 
-    resultadopopulacao = habitantes > Habitantes;
-    resultadoarea = area > area02;
-    resultadopib = PIB > PIB02;
-    resultadopontosturisticos = pontos_turisticos > Pontos_turisticos;
-    resultadodensidadepopulacional = quociente < quociente2;
-    resultadopibpercapita = Quociente > Quociente2;
-    resultadosuperpoder = SuperPoder1 > SuperPoder2;
-    //Pegamos as informação coletados e fazemos um duelo 
-    printf("\n Duelo de cartas\n");
-    printf("\nO numero 1 representa a carta01, o numero 0 representa a carta02\n");
-    printf("A maior população é da carta: %d\n", resultadopopulacao);
-    printf("A maior área é da carta: %d\n", resultadoarea);
-    printf("O maior PIB é da carta: %d\n", resultadopib);
-    printf("A carta com maior número de pontos turisticos é a carta: %d\n", resultadopontosturisticos);
-    printf("A menor densidade populacional pertence a carta: %d\n", resultadodensidadepopulacional);
-    printf("O maior PIB per capita pertence a carta: %d\n", resultadopibpercapita);
-    printf("O Superpoder que é a soma de todas as estatisticas da carta pertence a carta: %d\n", resultadosuperpoder);
-    //Vamos fazer a comparação de cartas
-    printf("\nCarta01 %s:%d\n", nome_cidade, habitantes);
-    printf("Carta02 %s:%d\n", Nome_cidade, Habitantes);
-   
-    if (habitantes > Habitantes){
-        printf("\nCarta01 venceu\n");
-
+    printf("\nAgora iremos comparar as cartas\n");
+    printf("escolha a primeira opção:");
+    scanf("%d", &opcao1);
+ 
+    switch (opcao1)
+    {
+    case 1:
+    printf("População %d carta 01 contra populção %d carta02 \n", habitantes, Habitantes);
+     resultado1 = habitantes > Habitantes ? 1 : 0;
+     break;
+    case 2:
+    printf("PIB %.2f carta 01 contra PIB %.2f carta02 \n", PIB, PIB02);
+     resultado1 = PIB > PIB02 ? 1 : 0;
+     break;
+    case 3:
+    printf("Area %.2f carta 01 contra area %.2f carta02\n", area, area2);
+     resultado1 = area > area2 ? 1 : 0;
+     break;
+     printf("Opção errada!\n");
+    default:
+     break;
     }
-    else{
-        printf("\nCarta02 venceu\n");
+     printf("Agora escolha a segunda opção:");
+     scanf("%d", &opcao2);
+    if (opcao1 == opcao2)
+    {
+     printf("escolheu a mesma opção\n");
+    }else
+    switch (opcao2)
+     {
+     case 1:
+     printf("População %d carta 01 contra populção %d carta02\n", habitantes, Habitantes);
+     resultado2 = habitantes > Habitantes ? 1 : 0;
+         break;
+     case 2:
+     printf("PIB %.2f carta 01 contra PIB %.2f carta02\n", PIB, PIB02);
+     resultado2 = PIB > PIB02 ? 1 : 0;
+         break;
+     case 3:
+     printf("Area %.2f carta 01 contra area %.2f carta02\n", area, area2);
+     resultado2 = area > area2 ?1 : 0;
+     break;
+     default:
+         printf("Opção errada!\n");
+         break;
+     }
+ 
+     if (resultado1 && resultado2)
+     {
+         printf("\ncarta 01 vence!\n");
+         printf("Cidade %s\n", nome_cidade);
+     }else if (resultado1 != resultado2){
+         printf("\nempate!\n");
+     }else{
+         printf("\ncarta 02 vence!\n");
+         printf("Cidade %s\n", Nome_cidade);
+     }
         
-    }
+        
+    
 
     return 0;
 
