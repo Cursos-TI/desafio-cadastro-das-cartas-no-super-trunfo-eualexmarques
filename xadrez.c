@@ -26,6 +26,17 @@ int main(){
         printf("Esquerda\n");
     }
     
+    //Mover o cavalo duas casas para baixo e uma para esquerda
+    for (int j = 0; j < 1; j++)
+    {
+      int k = 0;
+       do
+       {
+           printf("Baixo\n");
+           k++;
+        }while (k < 2);
+        printf("Esquerda\n");
+    }
 
 
 }
