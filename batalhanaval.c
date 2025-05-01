@@ -36,7 +36,35 @@ int main(){
         tabuleiro[4][j] = 3;
     }
     
-    
+    //Navio horizontal1
+    for (int i = 0; i < 1; i++)
+    {
+        tabuleiro[i][3] = 3;
+        
+        for (int i = 1; i < 2; i++)
+    {
+        tabuleiro[i][4] = 3;
+        for (int i = 2; i < 3; i++)
+        {
+            tabuleiro[i][5] = 3;
+        }
+        
+    }   
+    }
+
+    //Navio horizontal2
+    for (int j = 6; j < 7; j++)
+    {
+        tabuleiro[8][j] = 3;
+        for (int j = 7; j < 8; j++)
+    {
+        tabuleiro[7][j] = 3;
+        for (int j = 8; j < 9; j++)
+    {
+        tabuleiro[6][j] = 3;
+    }
+    }
+    }
 
     //Numerando as linhas e as colunas 
    for ( j = 0; j < 10; j++)
